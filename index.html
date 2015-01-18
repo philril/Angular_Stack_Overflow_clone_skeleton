@@ -1,0 +1,62 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Maintainable Javascript Thunder Talk</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="main.ctrl.js"></script>
+</head>
+<body ng-app="app" ng-controller="MainController as main">
+
+  <div class="container">
+    <h1>{{main.title}}</h1>
+    <h3>{{main.teamname}}</h3>
+    <h4>{{main.teammembers}}</h4>
+  </div>
+
+  <br>
+
+  <h3>Seach All Questions:</h3>
+  <div class="input-group">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-search"></span>
+    </span>
+    <input type="text" class="form-control" ng-model="main.searchInput">
+  </div>
+
+  <br>
+  <h4 class="container">{{main.searchInput}}</h4>
+
+  <h3>{{main.questions.length}} Questions:</h3>
+  <ul class="list-group">
+      <li class="list-group-item" ng-repeat="question in main.questions | filter:main.searchInput | orderBy:main.order.key:main.order.reverse" ng-click="showDetails = ! showDetails"><h4>{{question.title}}</h4><p class="list-group-item" ng-show="showDetails" style="background-color:gainsboro">{{question.content}}</p></li>
+  </ul>
+
+  <h3>Order Questions By:</h3>
+  <select class="form-control pull-right" ng-model="main.order" ng-options="order as order.title for order in main.orders" ng-init="main.order = main.orders[0]"></select>
+
+  <div class="clearfix"></div>
+  <h3>Add A New Question</h3>
+  <form name="main.addForm" class="form" ng-submit="main.addQuestion()">
+      <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" ng-model="main.new.title" required />
+      </div>
+      <div class="form-group">
+          <label>Content</label>
+          <input type="text" class="form-control" ng-model="main.new.content" required />
+      </div>
+      <div class="row">
+<!--           <div class="col-xs-6">
+              <label>Favorite: <input type="checkbox" ng-model="main.new.favorite" /></label>
+          </div> -->
+          <div class="col-xs-6">
+              <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
+          </div>
+      </div>
+  </form>
+
+</body>
+</html>
