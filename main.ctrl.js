@@ -12,27 +12,33 @@ angular.module('app').controller("MainController", function(){
     vm.questions = [
       {
         title: "WTF Rails?!?",
-        content: "WHY!?!?!??"
+        content: "WHY!?!?!??",
+        answers: ["Answer1", "Answer2", "Answer3"]
       },
       {
         title: "How do I do Angular something something?",
-        content: "Fingerstache ugh deep v banh mi. Meditation heirloom sriracha, seitan McSweeney's artisan chambray farm-to-table PBR sartorial YOLO actually cold-pressed freegan bitters."
+        content: "Fingerstache ugh deep v banh mi. Meditation heirloom sriracha, seitan McSweeney's artisan chambray farm-to-table PBR sartorial YOLO actually cold-pressed freegan bitters.",
+        answers: ["Answer1", "Answer2", "Answer3"]
       },
       {
         title: "What's the best JavaScript blah blah blah",
-        content: "Meh master cleanse keytar disrupt. Kitsch before they sold out Carles, butcher Shoreditch tattooed swag sartorial. Pork belly normcore stumptown, Brooklyn four dollar toast XOXO polaroid."
+        content: "Meh master cleanse keytar disrupt. Kitsch before they sold out Carles, butcher Shoreditch tattooed swag sartorial. Pork belly normcore stumptown, Brooklyn four dollar toast XOXO polaroid.",
+        answers: ["Answer1", "Answer2", "Answer3"]
       },
       {
         title: "How does Rails rabble rabble rabble?",
-        content: "XOXO asymmetrical crucifix, master cleanse hella cred messenger bag stumptown wolf roof party try-hard. Whatever Shoreditch lumbersexual vegan, hashtag ugh tousled. Semiotics Thundercats Bushwick chillwave."
+        content: "XOXO asymmetrical crucifix, master cleanse hella cred messenger bag stumptown wolf roof party try-hard. Whatever Shoreditch lumbersexual vegan, hashtag ugh tousled. Semiotics Thundercats Bushwick chillwave.",
+        answers: ["Answer1", "Answer2", "Answer3"]
       },
       {
         title: "Why does Angular blahdy-blah??",
-        content: "Twee pour-over tofu McSweeney's, organic Wes Anderson swag fingerstache chillwave vegan gentrify."
+        content: "Twee pour-over tofu McSweeney's, organic Wes Anderson swag fingerstache chillwave vegan gentrify.",
+        answers: ["Answer1", "Answer2", "Answer3"]
       },
       {
         title: "What's the deal with Angular's hooyah bullshit??",
-        content: "Heirloom Pitchfork raw denim gastropub. American Apparel blog organic, Portland distillery tilde food truck keffiyeh fixie cornhole heirloom Pinterest."
+        content: "Heirloom Pitchfork raw denim gastropub. American Apparel blog organic, Portland distillery tilde food truck keffiyeh fixie cornhole heirloom Pinterest.",
+        answers: ["Answer1", "Answer2", "Answer3"]
       }
     ];
 
@@ -56,4 +62,6 @@ angular.module('app').controller("MainController", function(){
         vm.questions.push(vm.new);
         vm.new = {};
     };
+
+    // NEED ADD ANSWER FUNCTION HERE!
 });
